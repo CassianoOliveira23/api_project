@@ -14,8 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/person')]
 class PersonController extends AbstractController
 {
-    
-
     #[Route('/', name: 'new_person', methods: ['POST'])]
     public function new(EntityManagerInterface $em, Request $request): JsonResponse
     {
