@@ -16,7 +16,7 @@ class Address
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $strret = null;
+    private ?string $street = null;
 
     #[ORM\OneToMany(mappedBy: 'address', targetEntity: Person::class)]
     private Collection $people;
@@ -31,14 +31,14 @@ class Address
         return $this->id;
     }
 
-    public function getStrret(): ?string
+    public function getStreet(): ?string
     {
-        return $this->strret;
+        return $this->street;
     }
 
-    public function setStrret(string $strret): static
+    public function setStreet(string $street): static
     {
-        $this->strret = $strret;
+        $this->street = $street;
 
         return $this;
     }
