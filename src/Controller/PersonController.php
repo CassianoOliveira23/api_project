@@ -24,7 +24,7 @@ class PersonController extends AbstractController
 
         $em->persist($person);
         $em->flush();
-        return $this->json(["Person saved successfuly"]);
+        return $this->json(["Person saved successfully"]);
     }
 
     #[Route('/', name: 'Person_get_all')]
@@ -45,7 +45,7 @@ class PersonController extends AbstractController
         }
         $em->remove($person);
         $em->flush();
-        return $this->json(["Congratulations! Person deleted successfuly"]);
+        return $this->json(["Congratulations! Person deleted successfully"]);
     }
 
 
@@ -59,7 +59,7 @@ class PersonController extends AbstractController
         $person->setBio($parametros['bio']);
         $em->persist($person);
         $em->flush();
-        return $this->json(["Congratulations! Person edited successfuly"]);
+        return $this->json(["Congratulations! Person edited successfully"]);
     }
 }
 
