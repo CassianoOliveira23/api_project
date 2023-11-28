@@ -17,10 +17,10 @@ class PersonController extends AbstractController
     #[Route('/', name: 'new_person', methods: ['POST'])]
     public function new(EntityManagerInterface $em, Request $request): JsonResponse
     {
-        $parametros = json_decode($request->getContent(), true);
+        $parameters = json_decode($request->getContent(), true);
         $person = new Person();
-        $person->setName($parametros['name']);
-        $person->setBio($parametros['bio']);
+        $person->setName($parameters['name']);
+        $person->setBio($parameters['bio']);
 
         $em->persist($person);
         $em->flush();
@@ -54,9 +54,9 @@ class PersonController extends AbstractController
     {
         $personRepository = $em->getRepository(Person::class);
         $person = $personRepository->find($id);
-        $parametros = json_decode($request->getContent(), true);
-        $person->setName($parametros['name']);
-        $person->setBio($parametros['bio']);
+        $parameters = json_decode($request->getContent(), true);
+        $person->setName($parameters['name']);
+        $person->setBio($parameters['bio']);
         $em->persist($person);
         $em->flush();
         return $this->json(["Congratulations! Person edited successfully"]);
