@@ -21,7 +21,6 @@ class PersonController extends AbstractController
         $person = new Person();
         $person->setName($parameters['name']);
         $person->setBio($parameters['bio']);
-
         $em->persist($person);
         $em->flush();
         return $this->json(["Person saved successfully"]);
